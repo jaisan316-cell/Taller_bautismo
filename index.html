@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Bautismo en Agua · Pacto de Amor con Cristo</title>
+<style>
+:root{
+  --deep:#062c43;
+  --mid:#0b4f6c;
+  --water:#1b98b5;
+  --aqua:#48cae4;
+  --light:#eef8fc;
+  --gold:#f4a261;
+  --text:#12303f;
+  --ok:#2a9d8f;
+  --bad:#e76f51;
+  --card:#ffffff;
+  --shadow:0 6px 22px rgba(6,44,67,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(150deg,#062c43 0%,#0b4f6c 45%,#1b98b5 100%);
+  color:#fff;
+  padding:38px 20px 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:-50% -20% auto -20%;height:300px;
+  background:radial-gradient(circle at 30% 20%,rgba(72,202,228,.35),transparent 60%),
+             radial-gradient(circle at 75% 10%,rgba(244,162,97,.22),transparent 55%);
+  animation:float 9s ease-in-out infinite alternate;
+}
+@keyframes float{from{transform:translateY(-10px)}to{transform:translateY(18px)}}
+.hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto;}
+.drop{font-size:2.6rem;display:inline-block;animation:bob 2.4s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.hero h1{
+  font-size:clamp(1.7rem,4.5vw,2.6rem);
+  letter-spacing:.5px;margin:6px 0 4px;font-weight:800;
+  text-shadow:0 3px 14px rgba(0,0,0,.25);
+}
+.hero p{opacity:.9;font-size:clamp(.92rem,2.2vw,1.05rem);margin-bottom:22px;}
+
+.progress-wrap{
+  display:flex;align-items:center;gap:12px;justify-content:center;
+  max-width:520px;margin:0 auto 26px;
+}
+.progress-bar{
+  flex:1;height:9px;background:rgba(255,255,255,.22);border-radius:99px;overflow:hidden;
+}
+#progressFill{
+  height:100%;width:0%;border-radius:99px;
+  background:linear-gradient(90deg,#48cae4,#a8e6cf);
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+}
+#progressText{font-size:.8rem;font-weight:700;white-space:nowrap;opacity:.95;}
+
+.wave{display:block;width:100%;height:70px;}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(238,248,252,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(11,79,108,.12);
+  padding:10px 12px;
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;
+}
+nav::-webkit-scrollbar{height:5px;}
+nav::-webkit-scrollbar-thumb{background:#b9dbe8;border-radius:9px;}
+.nav-btn{
+  flex:0 0 auto;border:1.5px solid rgba(11,79,108,.18);
+  background:#fff;color:var(--mid);
+  padding:7px 14px;border-radius:99px;
+  font-size:.82rem;font-weight:600;cursor:pointer;
+  transition:.22s;white-space:nowrap;
+}
+.nav-btn:hover{border-color:var(--aqua);transform:translateY(-1px);}
+.nav-btn.active{
+  background:linear-gradient(135deg,var(--mid),var(--water));
+  color:#fff;border-color:transparent;box-shadow:0 5px 16px rgba(27,152,181,.35);
+}
+.nav-btn.done:not(.active)::after{content:" ✓";color:var(--ok);font-weight:800;}
+
+/* ---------- CONTENT ---------- */
+main{max-width:900px;margin:0 auto;padding:26px 18px 40px;}
+.section{display:none;animation:fadeUp .45s ease both;}
+.section.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.sec-title{
+  font-size:clamp(1.25rem,3.4vw,1.7rem);
+  color:var(--deep);font-weight:800;margin-bottom:6px;line-height:1.25;
+}
+.sec-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:11px;
+  background:linear-gradient(135deg,var(--water),var(--aqua));
+  color:#fff;font-size:.95rem;font-weight:800;margin-right:10px;
+  vertical-align:middle;box-shadow:0 4px 12px rgba(27,152,181,.3);
+}
+.sec-sub{color:#5b7d8c;font-size:.95rem;margin-bottom:20px;}
+
+.card{
+  background:var(--card);border-radius:18px;padding:20px 22px;
+  box-shadow:var(--shadow);margin-bottom:16px;
+  border:1px solid rgba(11,79,108,.06);
+}
+.card h3{color:var(--mid);font-size:1.05rem;margin-bottom:8px;}
+.card p{margin-bottom:10px;}
+.card p:last-child{margin-bottom:0;}
+
+.highlight{
+  background:linear-gradient(120deg,rgba(72,202,228,.25),rgba(168,230,207,.35));
+  border-radius:8px;padding:1px 6px;font-weight:700;color:var(--deep);
+}
+
+.verse{
+  border-left:4px solid var(--aqua);
+  background:linear-gradient(90deg,rgba(72,202,228,.13),rgba(72,202,228,0));
+  padding:12px 16px;border-radius:0 12px 12px 0;
+  font-style:italic;color:#245064;margin:14px 0;font-size:.94rem;
+}
+.verse b{font-style:normal;display:block;font-size:.78rem;letter-spacing:.7px;
+  text-transform:uppercase;color:var(--water);margin-bottom:3px;}
+
+ul.list{list-style:none;margin:10px 0;}
+ul.list li{padding-left:26px;position:relative;margin-bottom:8px;}
+ul.list li::before{
+  content:"💧";position:absolute;left:0;top:1px;font-size:.85rem;
+}
+
+/* ---------- ACCORDION ---------- */
+details.acc{
+  background:#fff;border-radius:14px;margin-bottom:10px;
+  border:1px solid rgba(11,79,108,.1);overflow:hidden;
+  box-shadow:0 3px 10px rgba(6,44,67,.05);
+}
+details.acc summary{
+  cursor:pointer;padding:14px 18px;font-weight:700;color:var(--mid);
+  list-style:none;display:flex;align-items:center;gap:10px;transition:.2s;
+}
+details.acc summary::-webkit-details-marker{display:none;}
+details.acc summary::after{
+  content:"+";margin-left:auto;font-size:1.25rem;color:var(--aqua);
+  font-weight:400;transition:.25s;
+}
+details.acc[open] summary::after{transform:rotate(45deg);}
+details.acc[open] summary{background:rgba(72,202,228,.1);}
+details.acc .acc-body{padding:0 18px 16px;color:#33586b;font-size:.94rem;}
+
+/* ---------- FLIP CARDS ---------- */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));}
+.flip{perspective:1100px;height:180px;cursor:pointer;}
+.flip-inner{
+  position:relative;width:100%;height:100%;
+  transition:transform .65s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d;
+}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:18px;padding:18px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:8px;
+}
+.flip-front{
+  background:linear-gradient(140deg,#0b4f6c,#1b98b5);color:#fff;
+  box-shadow:0 8px 22px rgba(11,79,108,.3);
+}
+.flip-front .ico{font-size:1.9rem;}
+.flip-front strong{font-size:1rem;}
+.flip-front small{opacity:.78;font-size:.74rem;}
+.flip-back{
+  transform:rotateY(180deg);background:#fff;color:#33586b;
+  border:2px solid var(--aqua);font-size:.9rem;line-height:1.5;
+  box-shadow:0 8px 22px rgba(72,202,228,.25);
+}
+
+/* ---------- STEPPER (ACTUALIZADO CON IMAGEN) ---------- */
+.stepper{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.step{
+  flex:1 1 120px;border:2px solid rgba(11,79,108,.15);background:#fff;
+  border-radius:14px;padding:12px 10px;cursor:pointer;text-align:center;
+  font-weight:700;font-size:.85rem;color:var(--mid);transition:.22s;
+}
+.step .n{
+  display:block;font-size:1.1rem;font-weight:800;color:var(--aqua);margin-bottom:2px;
+}
+.step:hover{transform:translateY(-2px);border-color:var(--aqua);}
+.step.active{
+  background:linear-gradient(140deg,var(--mid),var(--water));color:#fff;
+  border-color:transparent;box-shadow:0 8px 20px rgba(27,152,181,.3);
+}
+.step.active .n{color:#a8e6cf;}
+
+.step-panel{
+  background:#fff;border-radius:16px;padding:16px 20px;
+  border-left:5px solid var(--aqua);box-shadow:var(--shadow);
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  min-height:110px;font-size:.95rem;
+  transition: all 0.3s ease;
+}
+.step-panel-img{
+  flex:0 0 90px;
+  height:90px;
+  background:#e0f2f7;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.step-panel-img svg{
+  width:100%;
+  height:100%;
+}
+.step-panel-text{
+  flex:1 1 200px;
+}
+.step-panel-text h4{color:var(--mid);margin-bottom:6px;font-size:1.05rem;}
+.step-panel-text p{margin:0;color:#33586b;}
+
+/* ---------- ESCENA VISUAL: TINIEBLAS → LUZ ---------- */
+.gov-scene{
+  background:#062c43;
+  border-radius:22px;
+  padding:10px;
+  box-shadow:var(--shadow);
+  margin:8px 0 14px;
+  overflow:hidden;
+}
+.gov-scene svg{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:14px;
+}
+.gov-scene-caption{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 14px 2px;
+  font-weight:800;
+  font-size:.82rem;
+  color:#eaf7fd;
+  letter-spacing:.3px;
+}
+.gov-person{
+  transform-box:view-box;
+  transform-origin:0 0;
+  transform:translate(120px,195px);
+  transition:transform 2.4s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+}
+.gov-scene.moved .gov-person{
+  transform:translate(520px,165px);
+}
+.gov-light-side{
+  opacity:.88;
+  transition:opacity 1.2s ease;
+}
+.gov-scene.moved .gov-light-side{
+  opacity:1;
+}
+
+/* ---------- ORDER GAME ---------- */
+.order-chips{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;}
+.order-chips button{
+  border:2px solid rgba(11,79,108,.18);background:#fff;border-radius:12px;
+  padding:11px 20px;font-weight:700;color:var(--mid);cursor:pointer;
+  transition:.2s;font-size:.92rem;
+}
+.order-chips button:hover:not(:disabled){border-color:var(--aqua);transform:translateY(-2px);}
+.order-chips button:disabled{cursor:default;}
+.order-chips button.right{background:#e4f7f3;border-color:var(--ok);color:var(--ok);}
+.order-chips button.wrong{animation:shake .4s;border-color:var(--bad);color:var(--bad);background:#fdeae4;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.msg{font-weight:700;font-size:.9rem;min-height:22px;}
+
+/* ---------- TABLE ---------- */
+.table-wrap{overflow-x:auto;border-radius:14px;box-shadow:var(--shadow);}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.9rem;min-width:420px;}
+th{
+  background:linear-gradient(135deg,var(--mid),var(--water));color:#fff;
+  padding:12px 14px;text-align:left;font-size:.83rem;letter-spacing:.4px;
+}
+td{padding:12px 14px;border-top:1px solid #e8f2f7;}
+tbody tr:nth-child(even){background:#f7fcfe;}
+tbody tr:hover{background:#eaf7fd;}
+
+/* ---------- QUIZ ---------- */
+.quiz-box{background:#fff;border-radius:20px;padding:22px;box-shadow:var(--shadow);}
+.quiz-progress{
+  font-size:.8rem;font-weight:800;color:var(--water);letter-spacing:.6px;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.quiz-box h3{color:var(--deep);font-size:1.05rem;margin-bottom:16px;line-height:1.4;}
+.option{
+  display:block;width:100%;text-align:left;background:#f6fbfd;
+  border:2px solid #dceaf1;border-radius:12px;padding:12px 16px;
+  margin-bottom:9px;cursor:pointer;font-size:.93rem;color:var(--text);
+  transition:.18s;font-family:inherit;line-height:1.45;
+}
+.option:hover:not(:disabled){border-color:var(--aqua);background:#eaf7fd;transform:translateX(3px);}
+.option:disabled{cursor:default;}
+.option.correct{background:#e4f7f3;border-color:var(--ok);color:#187a6b;font-weight:700;}
+.option.incorrect{background:#fdeae4;border-color:var(--bad);color:#b2401f;font-weight:700;}
+.feedback{margin-top:12px;font-size:.9rem;line-height:1.55;display:none;}
+.feedback.show{display:block;animation:fadeUp .3s ease;}
+.feedback .tag{font-weight:800;display:block;margin-bottom:4px;}
+.btn{
+  border:none;border-radius:12px;padding:12px 26px;font-weight:800;font-size:.92rem;
+  cursor:pointer;font-family:inherit;transition:.22s;
+  background:linear-gradient(135deg,var(--mid),var(--water));color:#fff;
+  box-shadow:0 6px 18px rgba(27,152,181,.32);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(27,152,181,.42);}
+.btn.ghost{background:#fff;color:var(--mid);border:2px solid rgba(11,79,108,.18);box-shadow:none;}
+.btn.ghost:hover{border-color:var(--aqua);}
+#nextWrap{margin-top:16px;text-align:right;}
+
+.result{text-align:center;padding:14px 0;}
+.result .score{
+  font-size:3rem;font-weight:900;
+  background:linear-gradient(135deg,var(--water),var(--aqua));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;
+}
+.result h3{color:var(--deep);margin:10px 0 6px;font-size:1.25rem;}
+.result p{color:#5b7d8c;margin-bottom:18px;}
+
+/* ---------- MINI RETOS ---------- */
+.mini-challenge {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--gold);
+  margin-top: 22px;
+  margin-bottom: 16px;
+  animation: fadeUp 0.4s ease both;
+}
+.mini-challenge h4 {
+  color: var(--mid);
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mini-challenge p {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+.mc-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.mc-options button {
+  border: 2px solid rgba(11,79,108,.15);
+  background: #f6fbfd;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+  color: var(--text);
+  font-family: inherit;
+}
+.mc-options button:hover:not(:disabled) {
+  border-color: var(--aqua);
+  background: #eaf7fd;
+  transform: translateY(-2px);
+}
+.mc-options button:disabled {
+  cursor: default;
+}
+.mc-options button.mc-correct {
+  background: #e4f7f3;
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.mc-options button.mc-wrong {
+  background: #fdeae4;
+  border-color: var(--bad);
+  color: var(--bad);
+}
+.mc-feedback {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  min-height: 20px;
+  line-height: 1.4;
+}
+
+/* ---------- FOOTER NAV ---------- */
+.footer-nav{
+  display:flex;justify-content:space-between;gap:12px;margin-top:30px;
+  padding-top:18px;border-top:1px dashed rgba(11,79,108,.2);
+}
+.footer-nav button{
+  border:none;background:#fff;color:var(--mid);font-weight:700;
+  padding:11px 20px;border-radius:12px;cursor:pointer;font-family:inherit;
+  font-size:.88rem;box-shadow:0 3px 12px rgba(6,44,67,.09);transition:.2s;
+}
+.footer-nav button:hover:not(:disabled){background:var(--mid);color:#fff;transform:translateY(-2px);}
+.footer-nav button:disabled{opacity:.35;cursor:not-allowed;}
+
+footer.credits{
+  text-align:center;padding:22px 16px 32px;color:#7d9caa;font-size:.78rem;
+}
+@media (max-width:520px){
+  .card{padding:16px 17px;}
+  .flip{height:195px;}
+  .step-panel{flex-direction:column;text-align:center;gap:12px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="drop">💧</div>
+    <h1>El Bautismo en Agua</h1>
+    <p>Un pacto de amor y compromiso con Cristo</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div id="progressFill"></div></div>
+      <span id="progressText">1 / 16</span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,42 C240,82 480,4 720,42 C960,80 1200,4 1440,42 L1440,80 L0,80 Z" fill="#eef8fc"></path>
+  </svg>
+</header>
+
+<nav id="nav"></nav>
+
+<main id="content">
+
+  <!-- 1 -->
+  <section class="section active">
+    <h2 class="sec-title"><span class="sec-num">1</span>¿Qué es un pacto?</h2>
+    <p class="sec-sub">Introducción · Un acuerdo solemne entre dos partes</p>
+
+    <div class="card">
+      <p>En la Biblia, un <span class="highlight">pacto</span> es un acuerdo solemne entre dos partes. En la antigüedad, cuando dos personas hacían un pacto, sacrificaban animales y caminaban entre las mitades, diciendo:</p>
+      <div class="verse">«Así me haga Dios si falto a mi pacto.»</div>
+      <p><strong>Ejemplo bíblico:</strong> Jonatán y David hicieron un pacto e intercambiaron sus ropas, espadas y cintos (1 Samuel 18:3-4).</p>
+    </div>
+
+    <details class="acc">
+      <summary>👕 Las túnicas</summary>
+      <div class="acc-body">«Estoy vestido de ti y tú de mí.»</div>
+    </details>
+    <details class="acc">
+      <summary>⚔️ Las espadas</summary>
+      <div class="acc-body">«Tus enemigos son mis enemigos.»</div>
+    </details>
+    <details class="acc">
+      <summary>🎗️ Los cintos</summary>
+      <div class="acc-body">«Seré tu fuerza en la debilidad.»</div>
+    </details>
+
+    <div class="card" style="margin-top:16px">
+      <p>El bautismo cristiano es un <span class="highlight">pacto de lealtad y fidelidad con Dios</span>, basado en el sacrificio de Jesucristo.</p>
+      <div class="verse"><b>Gálatas 2:20</b>«Ya no vivo yo, mas Cristo vive en mí.»</div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">2</span>¿Qué significa la palabra «bautismo»?</h2>
+    <p class="sec-sub">Del griego <em>baptizo</em></p>
+
+    <div class="card">
+      <p>La palabra bautismo viene del griego <span class="highlight">«baptizo»</span>, que significa <strong>sumergir, inundar, cubrir completamente con un fluido</strong>.</p>
+      <p>Se usaba para describir el proceso de teñir una tela: la tela se sumerge por completo y <strong>ya no sale igual</strong>.</p>
+    </div>
+
+    <div class="card" style="background:linear-gradient(140deg,#0b4f6c,#1b98b5);color:#fff;border:none;">
+      <h3 style="color:#a8e6cf">🌊 Espiritualmente</h3>
+      <p style="margin:0">El bautismo es <strong>sumergirnos en Cristo</strong>. Ya no somos los mismos; somos transformados.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">3</span>Símbolos y significados</h2>
+    <p class="sec-sub">Toca cada tarjeta para descubrir su significado 👆</p>
+
+    <div class="card" style="margin-bottom:18px">
+      <p style="margin:0">Un <span class="highlight">símbolo</span> es algo externo y visible que representa una realidad interna y espiritual.</p>
+    </div>
+
+    <div class="grid">
+      <div class="flip">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ico">🌈</div>
+            <strong>El arcoíris</strong>
+            <small>Génesis 9:13-15</small>
+            <small style="opacity:.6">Toca para ver</small>
+          </div>
+          <div class="flip-face flip-back">
+            Promesa de Dios de no destruir la tierra con agua.
+          </div>
+        </div>
+      </div>
+      <div class="flip">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ico">💧</div>
+            <strong>El agua del bautismo</strong>
+            <small>1 Juan 1:7</small>
+            <small style="opacity:.6">Toca para ver</small>
+          </div>
+          <div class="flip-face flip-back">
+            Limpieza de nuestro corazón por la sangre de Jesús.
+          </div>
+        </div>
+      </div>
+      <div class="flip">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ico">⛵</div>
+            <strong>El diluvio</strong>
+            <small>1 Pedro 3:20-21</small>
+            <small style="opacity:.6">Toca para ver</small>
+          </div>
+          <div class="flip-face flip-back">
+            Símbolo de juicio, pero también de salvación. Noé y su familia pasaron ilesos por las aguas del juicio.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">4</span>Un cambio de gobierno</h2>
+    <p class="sec-sub">Del reino de las tinieblas al Reino de la Luz</p>
+
+    <div class="card">
+      <p>En la cultura judía, cuando una pareja se desposaba, el padre de la novia la llevaba a un río, la sumergía (la bautizaba) y luego se la entregaba al novio.</p>
+      <p>Esto significaba un <span class="highlight">cambio de gobierno</span>: ya no estaba bajo la autoridad del padre, sino bajo la autoridad del esposo.</p>
+    </div>
+
+    <!-- ESCENA VISUAL: TINIEBLAS → LUZ -->
+    <div class="gov-scene" id="govScene">
+      <svg viewBox="0 0 700 260" role="img" aria-labelledby="govTitle govDesc">
+        <title id="govTitle">Traslado del reino de las tinieblas al Reino de la Luz</title>
+        <desc id="govDesc">Una figura camina desde una zona oscura con nubes y rayos hacia una zona luminosa con sol y rayos.</desc>
+
+        <defs>
+          <linearGradient id="govDarkSky" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0b1220"/>
+            <stop offset="1" stop-color="#1e293b"/>
+          </linearGradient>
+          <linearGradient id="govLightSky" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fef3c7"/>
+            <stop offset=".55" stop-color="#fde68a"/>
+            <stop offset="1" stop-color="#a7f3d0"/>
+          </linearGradient>
+          <radialGradient id="govSunGlow">
+            <stop offset="0" stop-color="#fff7cc"/>
+            <stop offset=".6" stop-color="#fbbf24"/>
+            <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="govPath" x1="0" x2="1">
+            <stop offset="0" stop-color="#64748b"/>
+            <stop offset="1" stop-color="#fbbf24"/>
+          </linearGradient>
+          <filter id="govSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="b"/>
+            <feMerge>
+              <feMergeNode in="b"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Lado tinieblas -->
+        <rect width="350" height="260" fill="url(#govDarkSky)"/>
+
+        <!-- Lado luz -->
+        <rect x="350" width="350" height="260" fill="url(#govLightSky)" class="gov-light-side"/>
+
+        <!-- Nubes oscuras -->
+        <path d="M0 80 Q40 50 90 72 T180 68 T270 84 T350 70 L350 0 L0 0 Z"
+              fill="#111827" opacity=".78"/>
+        <path d="M20 130 Q70 105 120 128 T220 124 T320 138 L350 132 L350 160 L0 160 Z"
+              fill="#1f2937" opacity=".55"/>
+
+        <!-- Rayo -->
+        <path d="M135 88 L112 140 L134 140 L108 200"
+              fill="none" stroke="#a78bfa" stroke-width="4"
+              stroke-linejoin="round" opacity=".9"/>
+
+        <!-- Luna tenue -->
+        <circle cx="70" cy="52" r="18" fill="#94a3b8" opacity=".45"/>
+
+        <!-- Sol y rayos -->
+        <circle cx="560" cy="78" r="46" fill="url(#govSunGlow)" filter="url(#govSoftGlow)"/>
+        <g stroke="#f59e0b" stroke-width="4" stroke-linecap="round" opacity=".75">
+          <line x1="560" y1="12" x2="560" y2="26"/>
+          <line x1="560" y1="130" x2="560" y2="144"/>
+          <line x1="494" y1="78" x2="508" y2="78"/>
+          <line x1="612" y1="78" x2="626" y2="78"/>
+          <line x1="514" y1="32" x2="524" y2="42"/>
+          <line x1="596" y1="114" x2="606" y2="124"/>
+          <line x1="606" y1="32" x2="596" y2="42"/>
+          <line x1="524" y1="114" x2="514" y2="124"/>
+        </g>
+
+        <!-- Colinas -->
+        <path d="M0 220 Q80 190 160 215 T350 210 L350 260 L0 260 Z"
+              fill="#0f172a" opacity=".82"/>
+        <path d="M350 212 Q430 186 520 208 T700 202 L700 260 L350 260 Z"
+              fill="#86efac" opacity=".55"/>
+
+        <!-- Camino -->
+        <path d="M80 236 Q220 200 350 214 T640 226"
+              fill="none" stroke="url(#govPath)" stroke-width="9"
+              stroke-linecap="round" opacity=".6"/>
+
+        <!-- Persona que cruza -->
+        <g class="gov-person">
+          <circle cx="0" cy="-30" r="10" fill="#cbd5e1"/>
+          <rect x="-8" y="-20" width="16" height="24" rx="6" fill="#64748b"/>
+          <line x1="-5" y1="5" x2="-12" y2="22" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+          <line x1="5" y1="5" x2="12" y2="22" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+        </g>
+
+        <!-- Etiquetas -->
+        <text x="175" y="34" text-anchor="middle" fill="#cbd5e1"
+              font-size="14" font-weight="800" letter-spacing="1">TINIEBLAS</text>
+        <text x="525" y="34" text-anchor="middle" fill="#92400e"
+              font-size="14" font-weight="800" letter-spacing="1">LUZ</text>
+      </svg>
+
+      <div class="gov-scene-caption">
+        <span>🌑 Reino de las tinieblas</span>
+        <span>☀️ Reino de la Luz</span>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-bottom:18px">
+      <button class="btn ghost" id="govSceneBtn">Ver el traslado ✨</button>
+    </p>
+
+    <div class="verse"><b>Colosenses 1:13-14</b>«Él nos libró del dominio de la oscuridad y nos trasladó al reino de su amado Hijo, en quien tenemos redención por su sangre, el perdón de pecados.»</div>
+
+    <div class="card">
+      <h3>Dos cosas que Dios hace:</h3>
+      <ul class="list">
+        <li>Nos libra del dominio de Satanás (las tinieblas).</li>
+        <li>Nos traslada al Reino de Cristo (la luz).</li>
+      </ul>
+      <p style="margin-top:10px">El bautismo es la <strong>expresión pública y simbólica</strong> de ese cambio de gobierno en nuestra vida.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">5</span>Identificación con Cristo</h2>
+    <p class="sec-sub">Significado espiritual del bautismo · Toca cada etapa</p>
+
+    <div class="stepper" id="stepper5">
+      <div class="step active" data-i="0"><span class="n">1</span>Entrar al agua</div>
+      <div class="step" data-i="1"><span class="n">2</span>Ser sumergido</div>
+      <div class="step" data-i="2"><span class="n">3</span>Salir del agua</div>
+    </div>
+    
+    <div class="step-panel" id="panel5">
+      <!-- El contenido se inyecta por JavaScript -->
+    </div>
+
+    <div class="verse" style="margin-top:18px"><b>Romanos 6:3-4</b>«¿Acaso no saben que todos los que fuimos bautizados para unirnos con Cristo Jesús, en realidad fuimos bautizados para participar en su muerte? Por tanto, mediante el bautismo fuimos sepultados con él en su muerte, a fin de que, así como Cristo resucitó por el poder del Padre, también nosotros llevemos una vida nueva.»</div>
+
+    <div class="card">
+      <p>Somos <span class="highlight">revestidos de Cristo</span> (Gálatas 3:27). Ahora somos nuevas criaturas:</p>
+      <div class="verse" style="margin-bottom:0"><b>2 Corintios 5:17</b>«Las cosas viejas pasaron; he aquí todas son hechas nuevas.»</div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">6</span>Condiciones para el bautismo</h2>
+    <p class="sec-sub">Arrepentirse y creer</p>
+
+    <div class="card">
+      <h3>1. Arrepentirse</h3>
+      <div class="verse"><b>Hechos 2:37-38</b>«Arrepiéntase y bautícese cada uno de ustedes en el nombre de Jesucristo para perdón de sus pecados, y recibirán el don del Espíritu Santo.»</div>
+      <p>El arrepentimiento es <strong>antes</strong> del bautismo. El bautismo es la confirmación externa de un cambio interno que ya ocurrió.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Creer</h3>
+      <div class="verse"><b>Romanos 10:8-10</b>«Si confesares con tu boca que Jesús es el Señor, y creyeres en tu corazón que Dios le levantó de los muertos, serás salvo.»</div>
+      <div class="verse"><b>Marcos 16:15-16</b>«El que crea y sea bautizado será salvo; pero el que no crea será condenado.»</div>
+      <p>En la iglesia primitiva, cada vez que alguien creía, era bautizado inmediatamente.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Reto de Orden: ordena el proceso bíblico</h3>
+      <p style="font-size:.9rem;color:#5b7d8c">Haz clic en las opciones en el orden correcto.</p>
+      <div class="order-chips" id="orderChips">
+        <button data-order="2">Bautizarse</button>
+        <button data-order="0">Creer</button>
+        <button data-order="1">Confesar</button>
+      </div>
+      <div class="msg" id="orderMsg"></div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">7</span>Resultados del bautismo</h2>
+    <p class="sec-sub">Una buena conciencia y convertirte en discípulo</p>
+
+    <div class="card">
+      <h3>A. Una buena conciencia</h3>
+      <div class="verse"><b>1 Pedro 3:21</b>«El bautismo no consiste en la limpieza del cuerpo, sino en el compromiso de tener una buena conciencia delante de Dios.»</div>
+      <p>Esto significa: <span class="highlight">vivir una vida limpia</span>, con transparencia e integridad como hijo de Dios.</p>
+    </div>
+
+    <div class="card">
+      <h3>B. Convertirse en discípulo</h3>
+      <div class="verse"><b>Mateo 28:18-20</b>«Vayan y hagan discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado.»</div>
+      <p>Hacer discípulos implica: relacionarnos, llevar a otros al arrepentimiento, a creer, a vivir el evangelio y a tener una buena conciencia.</p>
+      <p>Después del bautismo se necesita <strong>enseñanza continua</strong> para crecer como cristianos fuertes, responsables y maduros.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">8</span>El bautismo y el sacrificio de Cristo</h2>
+    <p class="sec-sub">El Cordero Pascual como símbolo de Cristo</p>
+
+    <div class="card">
+      <p>Cuando Dios liberó a Israel de Egipto, los israelitas eran esclavos. Fueron salvados de la ira y el juicio de Dios mediante <span class="highlight">la sangre del cordero pascual</span>.</p>
+      <div class="verse"><b>1 Pedro 1:18-19</b>«Fuisteis rescatados... no con cosas corruptibles, como oro o plata, sino con la sangre preciosa de Cristo, como de un cordero sin mancha y sin contaminación.»</div>
+      <div class="verse"><b>Juan 1:29</b>«He aquí el Cordero de Dios, que quita el pecado del mundo.»</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Cordero Pascual (Antiguo Testamento)</th><th>Cristo (Nuevo Testamento)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Liberación temporal de Egipto</td><td>Salvación eterna del pecado</td></tr>
+          <tr><td>Sangre en los dinteles</td><td>Sangre derramada en la cruz</td></tr>
+          <tr><td>Cada persona debía aceptarla</td><td>Cada persona debe aceptar a Cristo</td></tr>
+          <tr><td>Israel salió de Egipto</td><td>El creyente sale del mundo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:16px;border-left:5px solid var(--gold)">
+      <p style="margin:0"><strong>Importante:</strong> La muerte de Cristo no perdonó automáticamente nuestros pecados; proporcionó el perdón para quienes lo aceptan <span class="highlight">por fe y obediencia</span>.</p>
+      <div class="verse" style="margin-bottom:0"><b>1 Juan 4:10</b>«Él nos amó, y envió a su Hijo en propiciación por nuestros pecados.»</div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">9</span>Los dos bautismos de Israel</h2>
+    <p class="sec-sub">La nube y el mar</p>
+
+    <div class="verse"><b>1 Corintios 10:1-4</b>«Nuestros padres todos estuvieron bajo la nube, y todos pasaron el mar; y todos en Moisés fueron bautizados en la nube y en el mar... y la roca era Cristo.»</div>
+
+    <div class="grid">
+      <div class="card" style="text-align:center;margin:0">
+        <div style="font-size:2rem">☁️</div>
+        <h3>En la nube</h3>
+        <p style="margin:0">El Espíritu Santo</p>
+      </div>
+      <div class="card" style="text-align:center;margin:0">
+        <div style="font-size:2rem">🌊</div>
+        <h3>En el mar</h3>
+        <p style="margin:0">El bautismo en agua</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="verse" style="margin-top:0"><b>1 Corintios 10:6, 11</b>«Estas cosas sucedieron como ejemplos para nosotros... y están escritas para amonestarnos.»</div>
+      <p style="margin:0"><strong>Aplicación:</strong> Lo que vivió Israel es un modelo para nosotros. El paso del mar Rojo es figura del bautismo cristiano: morimos al mundo (Egipto) y resucitamos a una vida nueva.</p>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">10</span>Morimos y resucitamos con Cristo</h2>
+    <p class="sec-sub">Muerte · Sepultura · Resurrección</p>
+
+    <div class="stepper" id="stepper10">
+      <div class="step active" data-i="0"><span class="n">1</span>Morimos con Cristo</div>
+      <div class="step" data-i="1"><span class="n">2</span>Somos sepultados</div>
+      <div class="step" data-i="2"><span class="n">3</span>Resucitamos</div>
+    </div>
+    
+    <div class="step-panel" id="panel10">
+      <!-- El contenido se inyecta por JavaScript -->
+    </div>
+
+    <div class="verse" style="margin-top:18px"><b>Romanos 6:3-4</b>«Somos sepultados juntamente con él en la muerte por el bautismo, para que como Cristo resucitó de los muertos por la gloria del Padre, así también nosotros andemos en novedad de vida.»</div>
+    <div class="verse"><b>Colosenses 2:12</b>«Sepultados con él en el bautismo, en el cual fuisteis también resucitados con él, mediante la fe en el poder de Dios.»</div>
+
+    <div class="card" style="border-left:5px solid var(--gold)">
+      <p style="margin:0">El bautismo solo es válido <span class="highlight">en Cristo</span>. Ninguna iglesia, pastor o denominación puede avalarlo. Somos bautizados en Cristo y así entramos a formar parte de su iglesia.</p>
+      <div class="verse" style="margin-bottom:0"><b>Gálatas 3:27</b>«Todos los que habéis sido bautizados en Cristo, de Cristo estáis revestidos.»</div>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">11</span>Dos condiciones para estar muerto al pecado</h2>
+    <p class="sec-sub">Romanos 6:1-11</p>
+
+    <div class="grid">
+      <div class="card" style="margin:0">
+        <div style="font-size:1.6rem">📖</div>
+        <h3>1. Saber</h3>
+        <p style="margin:0">En qué consiste el sacrificio de Cristo y cómo nos afecta.</p>
+      </div>
+      <div class="card" style="margin:0">
+        <div style="font-size:1.6rem">✝️</div>
+        <h3>2. Considerarnos</h3>
+        <p style="margin:0">Muertos al pecado y vivos para Dios.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>El creyente bautizado debe saber:</h3>
+      <ul class="list">
+        <li>El mismo poder que resucitó a Jesús (el Espíritu Santo) es el que lo levanta a una vida nueva.</li>
+        <li>Esta guía no la puede dar ningún hombre; solo el Espíritu Santo.</li>
+      </ul>
+      <div class="verse" style="margin-bottom:0"><b>Romanos 8:10</b>«Si Cristo está en vosotros, el cuerpo en verdad está muerto a causa del pecado, mas el espíritu vive a causa de la justicia.»</div>
+    </div>
+
+    <div class="card" style="border-left:5px solid var(--gold)">
+      <p style="margin:0">El bautismo <strong>no produce</strong> la muerte al pecado por sí solo. Primero hemos muerto con Cristo, y luego somos bautizados como confirmación externa de esa realidad interna.</p>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">12</span>Advertencia: no sirvas a dos señores</h2>
+    <p class="sec-sub">Nuestra fidelidad es con Cristo</p>
+
+    <div class="verse"><b>1 Corintios 6:20</b>«Habéis sido comprados por precio; glorificad, pues, a Dios en vuestro cuerpo y en vuestro espíritu, los cuales son de Dios.»</div>
+
+    <div class="card">
+      <p>El precio que Cristo pagó fue <span class="highlight">su propia vida</span>. Él es nuestro único dueño y Señor.</p>
+      <p>Lamentablemente, muchos creyentes permiten que pastores, profetas, apóstoles, concilios o líderes religiosos se interpongan entre ellos y Cristo. <strong>Eso es un error.</strong> Nadie tiene autoridad para gobernar las ovejas que son de Cristo.</p>
+    </div>
+
+    <div class="card">
+      <p>Pablo reprende a los corintios por decir «Yo soy de Pablo», «Yo de Apolo»:</p>
+      <div class="verse"><b>1 Corintios 1:12-15</b>«¿Acaso fue Pablo crucificado por vosotros? ¿O habéis sido bautizados en el nombre de Pablo?»</div>
+      <p><strong>Pregunta clave:</strong> ¿Fueron ustedes crucificados por nosotros? ¿Pagaron ustedes el precio de su propia vida? <span class="highlight">No. Solo Jesús lo hizo.</span></p>
+      <div class="verse" style="margin-bottom:0"><b>Mateo 6:24</b>«Ninguno puede servir a dos señores.»</div>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">13</span>La importancia de saber</h2>
+    <p class="sec-sub">Conocimiento que transforma</p>
+
+    <div class="card" style="text-align:center;padding:34px 22px">
+      <div style="font-size:2.6rem;margin-bottom:8px">📚</div>
+      <div class="verse" style="text-align:left"><b>Oseas 4:6</b>«Mi pueblo se ha destruido, porque le faltó conocimiento.»</div>
+      <p style="margin:0">Es vital conocer lo que enseña la Palabra de Dios sobre el bautismo. <span class="highlight">No basta con ser bautizado; hay que entender el significado.</span></p>
+    </div>
+  </section>
+
+  <!-- 14 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">14</span>El ejemplo de Jesús y Juan el Bautista</h2>
+    <p class="sec-sub">El río Jordán</p>
+
+    <div class="card">
+      <p>Juan el Bautista bautizaba en el <span class="highlight">río Jordán</span>, un río caudaloso, <strong>por inmersión</strong>. Predicaba arrepentimiento, y muchas personas confirmaron su arrepentimiento con el bautismo.</p>
+      <p>Jesús mismo fue bautizado por Juan. ¡Qué emoción para Juan bautizar a Aquél que venía a salvar al mundo!</p>
+    </div>
+
+    <div class="card">
+      <h3>📜 El caso de Saulo</h3>
+      <p style="margin:0">El relato de la conversión de Saulo (Hechos 9:6-16) nos muestra cómo en los comienzos del cristianismo se bautizaba a las personas.</p>
+    </div>
+  </section>
+
+  <!-- 15 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">15</span>Resumen: los tres pasos del bautismo bíblico</h2>
+    <p class="sec-sub">El camino completo</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Paso</th><th>Versículo</th><th>Acción</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1. Arrepentimiento</strong></td><td>Mateo 3:11; Marcos 1:4; Hechos 2:38</td><td>Reconocer el pecado y volverse a Dios.</td></tr>
+          <tr><td><strong>2. Creer</strong></td><td>Marcos 16:16; Hechos 8:36-37</td><td>Creer que Jesús es el Hijo de Dios y Salvador.</td></tr>
+          <tr><td><strong>3. Bautizarse</strong></td><td>Mateo 28:19-20; Colosenses 2:12</td><td>Sumergirse en agua como testimonio público de fe.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <p>Sin arrepentimiento y sin fe, el bautismo no tiene sentido. Solo tiene significado cuando la persona se ha arrepentido y cree, y desea dar testimonio público de su fe en Jesucristo.</p>
+      <h3 style="margin-top:12px">Con el bautismo declaramos:</h3>
+      <ul class="list">
+        <li>Que morimos a una vida de pecado.</li>
+        <li>Que resucitamos para una vida de victoria en Cristo.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="background:linear-gradient(140deg,#0b4f6c,#1b98b5);color:#fff;border:none;">
+      <h3 style="color:#a8e6cf">Conclusión</h3>
+      <p>El bautismo en agua es:</p>
+      <ul class="list" style="color:#eaf7fd">
+        <li>Un pacto de lealtad y fidelidad con Dios.</li>
+        <li>Un símbolo de limpieza y salvación.</li>
+        <li>Un cambio de gobierno: del reino de las tinieblas al Reino de la Luz.</li>
+        <li>Una identificación con la muerte, sepultura y resurrección de Cristo.</li>
+        <li>Una confirmación pública de una transformación interna.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section class="section">
+    <h2 class="sec-title"><span class="sec-num">16</span>Reto final</h2>
+    <p class="sec-sub">Demuestra lo que aprendiste · 10 preguntas</p>
+    <div class="quiz-box" id="quizBox"></div>
+  </section>
+
+  <div class="footer-nav">
+    <button id="prevBtn">← Anterior</button>
+    <button id="nextBtn">Siguiente →</button>
+  </div>
+
+</main>
+
+<footer class="credits">
+  El Bautismo en Agua · Un pacto de amor y compromiso con Cristo 💧
+</footer>
+
+<script>
+/* ============ NAVEGACIÓN ============ */
+const sections = Array.from(document.querySelectorAll('.section'));
+const labels = ["Pacto","Bautismo","Símbolos","Gobierno","Identificación","Condiciones",
+                "Resultados","Cordero","Israel","Morir y resucitar","Muerto al pecado",
+                "Advertencia","Conocer","Jesús y Juan","Resumen","Reto final"];
+const nav = document.getElementById('nav');
+const visited = new Set([0]);
+let current = 0;
+
+labels.forEach((lbl, i) => {
+  const b = document.createElement('button');
+  b.className = 'nav-btn' + (i === 0 ? ' active' : '');
+  b.textContent = lbl;
+  b.addEventListener('click', () => goTo(i));
+  nav.appendChild(b);
+});
+const navBtns = Array.from(document.querySelectorAll('.nav-btn'));
+
+function goTo(i){
+  current = Math.max(0, Math.min(sections.length - 1, i));
+  sections.forEach((s, idx) => s.classList.toggle('active', idx === current));
+  navBtns.forEach((b, idx) => {
+    b.classList.toggle('active', idx === current);
+    b.classList.toggle('done', visited.has(idx) && idx !== current);
+  });
+  visited.add(current);
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === sections.length - 1;
+  navBtns[current].scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+}
+
+function updateProgress(){
+  const pct = (visited.size / sections.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = visited.size + ' / ' + sections.length;
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') goTo(current + 1);
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+});
+
+/* ============ FLIP CARDS ============ */
+document.querySelectorAll('.flip').forEach(card => {
+  card.addEventListener('click', () => card.classList.toggle('flipped'));
+});
+
+/* ============ STEPPERS CON IMÁGENES SVG ============ */
+const stepperData = {
+  stepper5: {
+    panel: 'panel5',
+    items: [
+      { 
+        t: 'Entrar al agua', 
+        d: 'Morir al pecado, enterrar nuestra vieja identidad.',
+        img: `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 70 Q25 60 50 70 T100 70 V100 H0 Z" fill="#48cae4" opacity="0.3"/>
+                <path d="M0 75 Q25 65 50 75 T100 75 V100 H0 Z" fill="#1b98b5" opacity="0.6"/>
+                <circle cx="50" cy="35" r="10" fill="#0b4f6c"/>
+                <rect x="45" y="45" width="10" height="20" rx="4" fill="#0b4f6c"/>
+                <line x1="45" y1="65" x2="35" y2="85" stroke="#0b4f6c" stroke-width="6" stroke-linecap="round"/>
+                <line x1="55" y1="65" x2="65" y2="85" stroke="#0b4f6c" stroke-width="6" stroke-linecap="round"/>
+                <path d="M30 40 L40 50 M70 40 L60 50" stroke="#0b4f6c" stroke-width="4" stroke-linecap="round"/>
+              </svg>`
+      },
+      { 
+        t: 'Ser sumergido', 
+        d: 'Sepultura con Cristo.',
+        img: `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="30" width="100" height="70" fill="#1b98b5" opacity="0.4"/>
+                <rect x="0" y="40" width="100" height="60" fill="#0b4f6c" opacity="0.7"/>
+                <circle cx="50" cy="50" r="10" fill="#48cae4"/>
+                <rect x="45" y="60" width="10" height="20" rx="4" fill="#48cae4"/>
+                <line x1="45" y1="80" x2="35" y2="95" stroke="#48cae4" stroke-width="6" stroke-linecap="round"/>
+                <line x1="55" y1="80" x2="65" y2="95" stroke="#48cae4" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="30" cy="25" r="4" fill="#eef8fc" opacity="0.6"/>
+                <circle cx="70" cy="15" r="6" fill="#eef8fc" opacity="0.6"/>
+                <circle cx="80" cy="35" r="3" fill="#eef8fc" opacity="0.6"/>
+                <circle cx="20" cy="45" r="5" fill="#eef8fc" opacity="0.6"/>
+              </svg>`
+      },
+      { 
+        t: 'Salir del agua', 
+        d: 'Resucitar espiritualmente a una vida nueva con Cristo.',
+        img: `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 80 Q25 70 50 80 T100 80 V100 H0 Z" fill="#48cae4" opacity="0.3"/>
+                <path d="M0 85 Q25 75 50 85 T100 85 V100 H0 Z" fill="#1b98b5" opacity="0.5"/>
+                <circle cx="50" cy="25" r="8" fill="#f4a261"/>
+                <line x1="50" y1="10" x2="50" y2="5" stroke="#f4a261" stroke-width="3" stroke-linecap="round"/>
+                <line x1="35" y1="25" x2="30" y2="25" stroke="#f4a261" stroke-width="3" stroke-linecap="round"/>
+                <line x1="65" y1="25" x2="70" y2="25" stroke="#f4a261" stroke-width="3" stroke-linecap="round"/>
+                <line x1="40" y1="15" x2="36" y2="11" stroke="#f4a261" stroke-width="3" stroke-linecap="round"/>
+                <line x1="60" y1="15" x2="64" y2="11" stroke="#f4a261" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="10" fill="#0b4f6c"/>
+                <rect x="45" y="60" width="10" height="15" rx="4" fill="#0b4f6c"/>
+                <line x1="45" y1="70" x2="30" y2="55" stroke="#0b4f6c" stroke-width="5" stroke-linecap="round"/>
+                <line x1="55" y1="70" x2="70" y2="55" stroke="#0b4f6c" stroke-width="5" stroke-linecap="round"/>
+              </svg>`
+      }
+    ]
+  },
+  stepper10: {
+    panel: 'panel10',
+    items: [
+      { 
+        t: 'Morimos con Cristo', 
+        d: 'Morimos al pecado.',
+        img: `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 80 L70 80 L80 95 L20 95 Z" fill="#475569"/>
+                <path d="M40 20 L60 20 L60 50 L80 50 L80 65 L60 65 L60 80 L40 80 L40 65 L20 65 L20 50 L40 50 Z" fill="#0b4f6c"/>
+                <path d="M45 25 L55 25 L55 45 L70 45 L70 55 L55 55 L55 75 L45 75 L45 55 L30 55 L30 45 L45 45 Z" fill="#f4a261"/>
+              </svg>`
+      },
+      { 
+        t: 'Somos sepultados', 
+        d: 'En el bautismo, sepultados juntamente con Él.',
+        img: `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="60" width="100" height="40" fill="#1b98b5" opacity="0.4"/>
+                <rect x="0" y="70" width="100" height="30" fill="#0b4f6c" opacity="0.6"/>
+                <path d="M30 70 L30 40 Q50 20 70 40 L70 70 Z" fill="#64748b"/>
+                <path d="M35 70 L35 45 Q50 30 65 45 L65 70 Z" fill="#334155"/>
+                <line x1="50" y1="45" x2="50" y2="65" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+                <line x1="42" y1="55" x2="58" y2="55" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+              </svg>`
+      },
+      { 
+        t: 'Resucitamos', 
+        d: 'A una vida nueva, por el poder del Espíritu Santo.',
+        img: `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 90 L70 90 L80 100 L20 100 Z" fill="#86efac"/>
+                <circle cx="50" cy="20" r="12" fill="#fbbf24"/>
+                <path d="M50 10 L50 5 M50 30 L50 35 M40 20 L35 20 M60 20 L65 20 M43 13 L39 9 M57 13 L61 9" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="10" fill="#0b4f6c"/>
+                <rect x="45" y="60" width="10" height="20" rx="4" fill="#0b4f6c"/>
+                <line x1="45" y1="80" x2="35" y2="90" stroke="#0b4f6c" stroke-width="6" stroke-linecap="round"/>
+                <line x1="55" y1="80" x2="65" y2="90" stroke="#0b4f6c" stroke-width="6" stroke-linecap="round"/>
+                <line x1="45" y1="65" x2="30" y2="50" stroke="#0b4f6c" stroke-width="5" stroke-linecap="round"/>
+                <line x1="55" y1="65" x2="70" y2="50" stroke="#0b4f6c" stroke-width="5" stroke-linecap="round"/>
+              </svg>`
+      }
+    ]
+  }
+};
+
+Object.entries(stepperData).forEach(([id, cfg]) => {
+  const wrap = document.getElementById(id);
+  const panel = document.getElementById(cfg.panel);
+  
+  panel.innerHTML = `
+    <div class="step-panel-img">${cfg.items[0].img}</div>
+    <div class="step-panel-text">
+      <h4>${cfg.items[0].t}</h4>
+      <p>${cfg.items[0].d}</p>
+    </div>
+  `;
+
+  wrap.querySelectorAll('.step').forEach(step => {
+    step.addEventListener('click', () => {
+      const i = +step.dataset.i;
+      wrap.querySelectorAll('.step').forEach(s => s.classList.toggle('active', s === step));
+      
+      panel.style.opacity = 0;
+      setTimeout(() => {
+        panel.innerHTML = `
+          <div class="step-panel-img">${cfg.items[i].img}</div>
+          <div class="step-panel-text">
+            <h4>${cfg.items[i].t}</h4>
+            <p>${cfg.items[i].d}</p>
+          </div>
+        `;
+        panel.style.opacity = 1;
+      }, 200);
+    });
+  });
+});
+
+/* ============ ANIMACIÓN DEL TRASLADO TINIEBLAS → LUZ ============ */
+const govScene = document.getElementById('govScene');
+const govSceneBtn = document.getElementById('govSceneBtn');
+
+if (govScene && govSceneBtn) {
+  govSceneBtn.addEventListener('click', () => {
+    govScene.classList.toggle('moved');
+    govSceneBtn.textContent = govScene.classList.contains('moved')
+      ? 'Volver a las tinieblas 🌑'
+      : 'Ver el traslado ✨';
+  });
+}
+
+/* ============ MINI JUEGO DE ORDEN ============ */
+const chips = document.getElementById('orderChips');
+const orderMsg = document.getElementById('orderMsg');
+let expected = 0;
+
+chips.querySelectorAll('button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.disabled) return;
+    const val = +btn.dataset.order;
+    if (val === expected) {
+      btn.classList.add('right');
+      btn.disabled = true;
+      expected++;
+      if (expected === 3) {
+        orderMsg.style.color = '#2a9d8f';
+        orderMsg.textContent = '🎉 ¡Correcto! Creer → Confesar → Bautizarse';
+      } else {
+        orderMsg.style.color = '#1b98b5';
+        orderMsg.textContent = '✅ ¡Bien! Sigue con el siguiente paso...';
+      }
+    } else {
+      btn.classList.add('wrong');
+      orderMsg.style.color = '#e76f51';
+      orderMsg.textContent = '❌ Ese no es el siguiente paso. Inténtalo de nuevo.';
+      setTimeout(() => btn.classList.remove('wrong'), 500);
+    }
+  });
+});
+
+/* ============ MINI RETOS EN CADA SECCIÓN ============ */
+const challenges = [
+  { id: 1, q: '¿Qué significaba intercambiar las espadas en el pacto?', opts: ['«Seré tu fuerza en la debilidad»', '«Tus enemigos son mis enemigos»', '«Estoy vestido de ti y tú de mí»'], a: 1, why: 'Las espadas significaban que los enemigos de uno serían los del otro.' },
+  { id: 2, q: '¿Qué significa la palabra griega «baptizo»?', opts: ['Lavar suavemente', 'Sumergir completamente', 'Derramar un poco'], a: 1, why: 'Baptizo significa sumergir, inundar o cubrir completamente con un fluido.' },
+  { id: 3, q: '¿Qué simboliza el diluvio en 1 Pedro 3:20-21?', opts: ['Solo destrucción', 'Juicio y salvación', 'Un evento histórico'], a: 1, why: 'El diluvio fue juicio para el mundo pero salvación para Noé y su familia.' },
+  { id: 4, q: '¿De qué reino nos libra Dios según Colosenses 1:13?', opts: ['Del reino de las tinieblas', 'Del reino de Israel', 'Del reino de Roma'], a: 0, why: 'Dios nos libra del dominio de la oscuridad y nos traslada a Su Reino.' },
+  { id: 5, q: '¿Qué representa entrar al agua en el bautismo?', opts: ['Morir al pecado', 'Ser sepultado', 'Resucitar'], a: 0, why: 'Entrar al agua representa morir al pecado y enterrar nuestra vieja identidad.' },
+  { id: 6, q: 'Según Hechos 2:38, ¿qué debe ocurrir antes del bautismo?', opts: ['El arrepentimiento', 'La oración', 'El ayuno'], a: 0, why: 'El arrepentimiento es antes del bautismo. El bautismo confirma el cambio interno.' },
+  { id: 7, q: 'Según 1 Pedro 3:21, el bautismo es el compromiso de tener...', opts: ['Una buena conciencia', 'Muchas riquezas', 'Autoridad sobre otros'], a: 0, why: 'El bautismo es el compromiso de tener una buena conciencia delante de Dios.' },
+  { id: 8, q: '¿A quién representa el Cordero Pascual?', opts: ['A Moisés', 'A Cristo', 'A David'], a: 1, why: 'El Cordero Pascual es símbolo de Cristo, quien quita el pecado del mundo.' },
+  { id: 9, q: '¿En qué dos cosas fue bautizado Israel?', opts: ['En la nube y en el mar', 'En el Nilo y en el Jordán', 'En el templo y en el altar'], a: 0, why: 'Israel fue bautizado en la nube (Espíritu Santo) y en el mar (agua).' },
+  { id: 10, q: '¿Qué representa ser sumergido en el agua?', opts: ['La sepultura con Cristo', 'Un baño ceremonial', 'La entrada a la iglesia'], a: 0, why: 'Ser sumergido representa la sepultura con Cristo.' },
+  { id: 11, q: '¿Quién nos levanta a una vida nueva según Romanos 8:10?', opts: ['El Espíritu Santo', 'Los líderes religiosos', 'Nuestras fuerzas'], a: 0, why: 'El mismo poder que resucitó a Jesús (el Espíritu Santo) nos levanta a una vida nueva.' },
+  { id: 12, q: 'Según Mateo 6:24, ¿cuántos señores podemos servir?', opts: ['Dos', 'Uno', 'Todos'], a: 1, why: '«Ninguno puede servir a dos señores.» Nuestra fidelidad es solo con Cristo.' },
+  { id: 13, q: 'Según Oseas 4:6, ¿por qué se destruyó el pueblo?', opts: ['Por falta de conocimiento', 'Por falta de dinero', 'Por falta de sacerdotes'], a: 0, why: '«Mi pueblo se ha destruido, porque le faltó conocimiento.»' },
+  { id: 14, q: '¿Dónde bautizaba Juan el Bautista?', opts: ['En el río Jordán', 'En el Mar Rojo', 'En el estanque de Siloé'], a: 0, why: 'Juan bautizaba en el río Jordán, un río caudaloso, por inmersión.' },
+  { id: 15, q: '¿Cuál es el último paso del bautismo bíblico?', opts: ['Creer', 'Confesar', 'Bautizarse'], a: 2, why: 'El orden es: Creer → Confesar → Bautizarse.' }
+];
+
+challenges.forEach(ch => {
+  const section = sections[ch.id - 1];
+  if (!section) return;
+  
+  const div = document.createElement('div');
+  div.className = 'mini-challenge';
+  div.innerHTML = `
+    <h4>🎯 Mini Reto</h4>
+    <p>${ch.q}</p>
+    <div class="mc-options">
+      ${ch.opts.map((opt, i) => `<button data-idx="${i}">${opt}</button>`).join('')}
+    </div>
+    <div class="mc-feedback"></div>
+  `;
+  
+  section.appendChild(div);
+  
+  const buttons = div.querySelectorAll('.mc-options button');
+  const feedback = div.querySelector('.mc-feedback');
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (div.dataset.answered === 'true') return;
+      div.dataset.answered = 'true';
+      const idx = +btn.dataset.idx;
+      
+      buttons.forEach(b => b.disabled = true);
+      
+      if (idx === ch.a) {
+        btn.classList.add('mc-correct');
+        feedback.style.color = '#2a9d8f';
+        feedback.textContent = '✅ ¡Correcto! ' + ch.why;
+      } else {
+        btn.classList.add('mc-wrong');
+        buttons[ch.a].classList.add('mc-correct');
+        feedback.style.color = '#e76f51';
+        feedback.textContent = '❌ Casi... ' + ch.why;
+      }
+    });
+  });
+});
+
+/* ============ QUIZ FINAL ============ */
+const quizData = [
+  {
+    q: '¿Qué significa la palabra griega «baptizo»?',
+    opts: ['Lavar suavemente con agua', 'Sumergir, cubrir completamente con un fluido', 'Derramar unas gotas sobre la cabeza', 'Orar en voz alta'],
+    a: 1,
+    why: '«Baptizo» significa sumergir, inundar, cubrir completamente con un fluido. Se usaba para describir el teñido de una tela.'
+  },
+  {
+    q: 'En el pacto entre Jonatán y David, ¿qué significaba el intercambio de espadas?',
+    opts: ['«Seré tu fuerza en la debilidad»', '«Estoy vestido de ti y tú de mí»', '«Tus enemigos son mis enemigos»', '«Te daré mi reino»'],
+    a: 2,
+    why: 'Las espadas significaban: «Tus enemigos son mis enemigos». Las túnicas: «Estoy vestido de ti y tú de mí». Los cintos: «Seré tu fuerza en la debilidad».'
+  },
+  {
+    q: '¿Qué representa el agua del bautismo?',
+    opts: ['La limpieza de nuestro corazón por la sangre de Jesús', 'El castigo por los pecados', 'La riqueza del creyente', 'El poder de la iglesia'],
+    a: 0,
+    why: 'El agua del bautismo representa la limpieza de nuestro corazón por la sangre de Jesús (1 Juan 1:7).'
+  },
+  {
+    q: 'El bautismo representa un cambio de gobierno. ¿De dónde a dónde?',
+    opts: ['De la iglesia al mundo', 'Del reino de las tinieblas al Reino de la Luz', 'De la ley a la gracia solamente', 'De Israel a las naciones'],
+    a: 1,
+    why: 'Colosenses 1:13-14: Dios nos libra del dominio de la oscuridad y nos traslada al reino de su amado Hijo.'
+  },
+  {
+    q: 'Según Romanos 6, ser sumergido en el agua representa...',
+    opts: ['Un baño ceremonial', 'La sepultura con Cristo', 'El bautismo del Espíritu', 'La entrada al templo'],
+    a: 1,
+    why: 'Entrar al agua = morir al pecado; ser sumergido = sepultura con Cristo; salir del agua = resucitar a una vida nueva.'
+  },
+  {
+    q: '¿Cuál es el orden bíblico?',
+    opts: ['Bautizarse → Creer → Confesar', 'Confesar → Bautizarse → Creer', 'Creer → Confesar → Bautizarse', 'Creer → Bautizarse → Confesar'],
+    a: 2,
+    why: 'El orden bíblico es: Creer → Confesar → Bautizarse. En la iglesia primitiva, cada vez que alguien creía, era bautizado inmediatamente.'
+  },
+  {
+    q: 'Según 1 Pedro 3:21, el bautismo es el compromiso de tener...',
+    opts: ['Una buena posición social', 'Una buena conciencia delante de Dios', 'Muchos conocimientos', 'Autoridad sobre otros'],
+    a: 1,
+    why: '«El bautismo no consiste en la limpieza del cuerpo, sino en el compromiso de tener una buena conciencia delante de Dios.»'
+  },
+  {
+    q: '¿Qué dos bautismos vivió Israel según 1 Corintios 10?',
+    opts: ['En el Jordán y en el Nilo', 'En la nube (Espíritu Santo) y en el mar (agua)', 'En el desierto y en Egipto', 'En el templo y en el altar'],
+    a: 1,
+    why: 'Israel fue bautizado en la nube (el Espíritu Santo) y en el mar (el bautismo en agua). Son ejemplos para nosotros.'
+  },
+  {
+    q: '¿Quién puede avalar válidamente el bautismo?',
+    opts: ['Cualquier pastor con credenciales', 'Un concilio de líderes', 'Solo Cristo; ninguna iglesia, pastor o denominación', 'La denominación a la que perteneces'],
+    a: 2,
+    why: 'El bautismo solo es válido en Cristo. Ninguna iglesia, pastor o denominación puede avalarlo. Somos bautizados en Cristo.'
+  },
+  {
+    q: 'Según Mateo 6:24, ¿qué advertencia se nos da?',
+    opts: ['Ninguno puede servir a dos señores', 'Hay que ayunar dos veces por semana', 'El que no bautiza no es salvo', 'Debemos obedecer a todo líder'],
+    a: 0,
+    why: '«Ninguno puede servir a dos señores.» Nuestra fidelidad es con Cristo, no con hombres ni organizaciones humanas.'
+  }
+];
+
+let qIndex = 0, qScore = 0, qAnswered = false;
+const quizBox = document.getElementById('quizBox');
+
+function renderQuestion(){
+  if (qIndex >= quizData.length) { renderResult(); return; }
+  const q = quizData[qIndex];
+  qAnswered = false;
+  quizBox.innerHTML = `
+    <div class="quiz-progress">Pregunta ${qIndex + 1} de ${quizData.length} · Puntos: ${qScore}</div>
+    <h3>${q.q}</h3>
+    <div class="options"></div>
+    <div class="feedback" id="feedback"></div>
+    <div id="nextWrap"></div>
+  `;
+  const optDiv = quizBox.querySelector('.options');
+  q.opts.forEach((txt, i) => {
+    const b = document.createElement('button');
+    b.className = 'option';
+    b.textContent = txt;
+    b.addEventListener('click', () => answer(i, b));
+    optDiv.appendChild(b);
+  });
+}
+
+function answer(i, btn){
+  if (qAnswered) return;
+  qAnswered = true;
+  const q = quizData[qIndex];
+  const all = quizBox.querySelectorAll('.option');
+  all.forEach(b => b.disabled = true);
+  const fb = document.getElementById('feedback');
+
+  if (i === q.a) {
+    btn.classList.add('correct');
+    qScore++;
+    fb.innerHTML = `<span class="tag" style="color:#2a9d8f">✅ ¡Correcto!</span>${q.why}`;
+  } else {
+    btn.classList.add('incorrect');
+    all[q.a].classList.add('correct');
+    fb.innerHTML = `<span class="tag" style="color:#e76f51">❌ Casi...</span>${q.why}`;
+  }
+  fb.classList.add('show');
+
+  const wrap = document.getElementById('nextWrap');
+  const next = document.createElement('button');
+  next.className = 'btn';
+  next.textContent = (qIndex === quizData.length - 1) ? 'Ver resultado 🏁' : 'Siguiente →';
+  next.addEventListener('click', () => { qIndex++; renderQuestion(); });
+  wrap.appendChild(next);
+}
+
+function renderResult(){
+  const total = quizData.length;
+  const pct = Math.round((qScore / total) * 100);
+  let title, msg, emoji;
+  if (pct === 100) { emoji = '🏆'; title = '¡Perfecto!'; msg = 'Dominas completamente la enseñanza sobre el bautismo.'; }
+  else if (pct >= 80) { emoji = '🌟'; title = '¡Excelente!'; msg = 'Tienes un conocimiento muy sólido. Repasa lo que falló y vuelve a intentarlo.'; }
+  else if (pct >= 60) { emoji = '💧'; title = '¡Buen trabajo!'; msg = 'Vas por buen camino. Repasa las secciones y prueba de nuevo.'; }
+  else { emoji = '📖'; title = 'Sigue aprendiendo'; msg = 'Vuelve a leer las secciones con calma y repite el reto. ¡Lo lograrás!'; }
+
+  quizBox.innerHTML = `
+    <div class="result">
+      <div style="font-size:3rem">${emoji}</div>
+      <div class="score">${qScore}/${total}</div>
+      <h3>${title}</h3>
+      <p>${msg}</p>
+      <button class="btn" id="retryBtn">🔄 Intentar de nuevo</button>
+    </div>
+  `;
+  document.getElementById('retryBtn').addEventListener('click', () => {
+    qIndex = 0; qScore = 0; renderQuestion();
+  });
+}
+
+/* ============ INICIALIZAR ============ */
+renderQuestion();
+updateProgress();
+document.getElementById('prevBtn').disabled = true;
+</script>
+</body>
+</html>
